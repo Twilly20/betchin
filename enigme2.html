@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subtraction Introduction & Practice</title>
+    <!-- Lien vers le fichier CSS pour les styles -->
+    <link rel="stylesheet" href="test.css" />
+  </head>
+  <body class="e2">
+    <div class="container">
+      <div class="content">
+        <div class="header">
+          <div class="title-bg">MISSION</div>
+          <div class="title">
+            <p>
+              Ijuuu tu as réussi à déchiffrer quoi? kpaaa. Maintenant, tu dois
+              te rendre dans un magasin Swarovski à cette adresse : (<em
+                >7999 Boulevard des Galeries-d'Anjou Montréal QC H1M 1W9</em
+              >) pour récupérer un colis. Ce n'est pas loin tu vas traverser le
+              pont et c'est juste à coté. c'est un centre commercial (les
+              galeries d'Anjou) avec plusieur magasin à l'inerieur. Vas à pieds
+              et fais vite les magasins ferment à 17h.
+            </p>
+            <p>
+              Ne t’inquiète pas, tout est à ton nom (N’Zi Grace). Quand tu
+              arriveras dans le magasin, envoie-moi ce message par whatsapp:
+              <strong>« énigme SW »</strong>, et je te transférerai le reçu par
+              mail pour que tu puisses retirer le colis.
+            </p>
+            <p>
+              Quand tu auras récupéré le colis, pour pouvoir passer à l’étape
+              suivante, tu devras entrer en bas la date sous la forme
+              <strong>jour et mois</strong>, puis appuyer sur
+              <strong>« Valider »</strong>.
+              <strong
+                >JE DIS BIEN SOUS LA FORME JOUR ET MOIS SEULEMENT !!!</strong
+              >
+            </p>
+
+            <p>
+              Par exemple mon anniversaire c'est le 10 mai donc la forme jour et
+              mois sera 1005.
+            </p>
+            <p>
+              Dépêche-toi, car tu as encore beaucoup de choses à faire. Bonne
+              chance, bébé.
+            </p>
+
+            <p>
+              RAPPEL: SORS AVEC UNE PIÈCE D'IDENTITÉ, UN BIC ET UNE FEUILLE
+              PARCE QUE TU AURAS DES ENIGMES À RÉSOUDRE DEHORS!!
+            </p>
+
+            <form id="enigmeForm" onsubmit="return validateAnswer()">
+              <div class="input-container">
+                <input
+                  type="text"
+                  placeholder="Entrez votre réponse"
+                  class="input-field"
+                  id="userInput"
+                />
+                <button type="submit" class="bottom-link">VALIDER</button>
+              </div>
+              <div id="errorMessage" class="error-message"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function validateAnswer() {
+        const correctAnswer = "2707"; // Réponse correcte
+        const userInput = document.getElementById("userInput").value.trim();
+        const errorMessage = document.getElementById("errorMessage");
+
+        if (userInput.toLowerCase() === correctAnswer.toLowerCase()) {
+          // Si la réponse est correcte, redirigez vers la page suivante
+          window.location.href = "enigme6.html";
+        } else {
+          // Si la réponse est incorrecte, affichez un message d'erreur
+          errorMessage.textContent =
+            "Réponse incorrecte. il faut réessayer bebe.";
+        }
+
+        return false; // Empêche le formulaire de se soumettre de manière traditionnelle
+      }
+    </script>
+  </body>
+</html>

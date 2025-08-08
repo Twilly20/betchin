@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subtraction Introduction & Practice</title>
+    <!-- Lien vers le fichier CSS pour les styles -->
+    <link rel="stylesheet" href="test.css" />
+  </head>
+  <body class="e6">
+    <div class="container">
+      <div class="content">
+        <div class="header">
+          <div class="title-bg">MISSION</div>
+          <div class="title">
+            <p>
+              Bravo ma femme! Bon, ne rentre pas déjà à la maison, car tu as
+              encore des choses à faire dehors.
+            </p>
+
+            <p>
+              Je t’avais dit qu’il y avait une seule chose que tu allais devoir
+              acheter ici… eh bien, here we go (oui, je sais qu’on a déjà
+              beaucoup d’alcool, mais fais-le juste pour le jeu 😅).
+            </p>
+
+            <p>
+              Reste dans le même centre commercial dans lequel tu as récupéré le
+              colis Swarovski et cherche une SAQ. il y en a une pas tres loin du
+              swarovski, tu peux te renseigner si tu ne la trouves pas.
+              Rends-toi dans la SAQ pour acheter une bouteille de Nicolas
+              Feuillatte rosé OU une bouteille de Baileys (prends la grosse
+              bouteille de Baileys hin) — je te laisse le choix.
+            </p>
+
+            <p>
+              Quand tu auras terminé ton achat, regarde derrière la bouteille,
+              en bas : il y a un numéro de 13 chiffres. Entre les 4 premiers
+              chiffres dans le champ prévu.
+            </p>
+
+            <p>
+              Ne t’inquiète pas, quelle que soit la bouteille que tu choisiras,
+              le code fonctionnera. Puis appuie sur Valider pour pouvoir passer
+              à l’étape suivante.
+            </p>
+
+            <form id="enigmeForm" onsubmit="return validateAnswer()">
+              <div class="input-container">
+                <input
+                  type="text"
+                  placeholder="Entrez votre réponse"
+                  class="input-field"
+                  id="userInput"
+                />
+                <button type="submit" class="bottom-link">VALIDER</button>
+              </div>
+              <div id="errorMessage" class="error-message"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function validateAnswer() {
+        const userInput = document.getElementById("userInput").value.trim();
+        const errorMessage = document.getElementById("errorMessage");
+
+        // Vérifie si l'entrée est exactement 4 chiffres
+        const regex = /^\d{4}$/;
+
+        if (regex.test(userInput)) {
+          // Si c'est bien un nombre de 4 chiffres → passe à l'étape suivante
+          window.location.href = "enigme7.html";
+        } else {
+          // Sinon, message d'erreur
+          errorMessage.textContent = "tu dois entrer un nombre de 4 chiffres.";
+        }
+
+        return false; // Empêche le rechargement du formulaire
+      }
+    </script>
+  </body>
+</html>

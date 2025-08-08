@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subtraction Introduction & Practice</title>
+    <!-- Lien vers le fichier CSS pour les styles -->
+    <link rel="stylesheet" href="test.css" />
+  </head>
+  <body class="e5">
+    <div class="container">
+      <div class="content">
+        <div class="header">
+          <div class="title-bg">Enigme</div>
+          <div class="title">
+            <h2>Il te reste maintenant la dernière robe à trouver!</h2>
+
+            <h3>📚 Mission :</h3>
+            <p>
+              Cherche un de mes livres d’université intitulé
+              <em>« La communication et la gestion »</em>.<br />
+              Ce livre contient la clé qui te permettra de
+              <strong>reconstruire une phrase</strong> menant à la dernière
+              robe.
+            </p>
+
+            <h3>💡 Indice bonus :</h3>
+            <p>
+              Je t’offre déjà le dernier mot de la phrase…<br />
+              <span style="font-size: 1.2em; font-weight: bold; color: #c71585"
+                >✨ Douche ✨</span
+              >
+            </p>
+
+            <h3>🔍 Comment procéder :</h3>
+            <ul>
+              <li>
+                Je vais te donner plusieurs codes sous cette forme :
+                <strong>(Page : X — Ligne : Y — Mot : Z)</strong>
+              </li>
+              <li>
+                Chaque code te permettra de trouver un mot précis dans le livre.
+              </li>
+              <li>
+                Assemble tous ces mots dans l’ordre… et la phrase mystère
+                apparaîtra.
+              </li>
+            </ul>
+
+            <h3>📖 Exemple :</h3>
+            <p>
+              Avec le code <strong>(Page : 5 Ligne : 2 Mot : 3)</strong>, tu
+              trouveras le mot « communication » dans le livre.
+            </p>
+            <p>Voici les code à décrypter :</p>
+            <p><strong>(Page: 89 Ligne: 2 Mot: 6)</strong></p>
+            <p><strong>(Page: 1 Ligne: 3 Mot: 1)</strong></p>
+            <p><strong>(Page: 1 Ligne: 1 Mot: 13)</strong></p>
+
+            <p>
+              Dans la robe, j’ai caché un code de 4 chiffres ecrit sur une
+              feuille, entre le code dans le champ en bas et appuie sur
+              “Valider” pour passer à l’étape supérieure.
+            </p>
+            <form id="enigmeForm" onsubmit="return validateAnswer()">
+              <div class="input-container">
+                <input
+                  type="text"
+                  placeholder="Entrez votre réponse"
+                  class="input-field"
+                  id="userInput"
+                />
+                <button type="submit" class="bottom-link">VALIDER</button>
+              </div>
+              <div id="errorMessage" class="error-message"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function validateAnswer() {
+        const correctAnswer = "0852"; // Réponse correcte
+        const userInput = document.getElementById("userInput").value.trim();
+        const errorMessage = document.getElementById("errorMessage");
+
+        if (userInput.toLowerCase() === correctAnswer.toLowerCase()) {
+          // Si la réponse est correcte, redirigez vers la page suivante
+          window.location.href = "enigme8.html";
+        } else {
+          // Si la réponse est incorrecte, affichez un message d'erreur
+          errorMessage.textContent = "Réponse incorrecte. Veuillez réessayer.";
+        }
+
+        return false; // Empêche le formulaire de se soumettre de manière traditionnelle
+      }
+    </script>
+  </body>
+</html>

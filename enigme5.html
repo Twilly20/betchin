@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subtraction Introduction & Practice</title>
+    <!-- Lien vers le fichier CSS pour les styles -->
+    <link rel="stylesheet" href="test.css" />
+  </head>
+  <body class="e5">
+    <div class="container">
+      <div class="content">
+        <div class="header">
+          <div class="title-bg">Enigme</div>
+          <div class="title">
+            bon tu es de retour à la maison mais tu vas souffrir un peu encore.
+            <p>
+              Maintenant, tu as deux robes à chercher. Elles sont toutes les
+              deux cachées quelque part dans l’appartement. Voici comment
+              chercher la première robe :
+            </p>
+            Connais tu la Méthode du chiffre de Polybe? bah encore une fois
+            internet est ton ami bebe mais tqt ce n'est vraiment pas compliqué.
+            Prends une feuille et un bic, tu devras utiliser une grille de 5x5
+            et remplir la grille avec les lettres de l'alphabet. Allez je suis
+            gentille je t'aide, la lettre z ne figure pas dans la grille. pardo,
+            essaies de faire ca toi meme avant d'utiliser Chatgpt. Bisou bebe.
+            <p>Voici le code à décrypter :</p>
+            <p>43 15 22 11 43 14 15</p>
+            <p>14 15 43 43 24 15 43 15</p>
+            <p>32 15</p>
+            <p>45 11 12 32 15 11 51</p>
+            <p>11 13 13 43 35 13 23 15</p>
+            <p>14 15 43 43 24 15 43 15</p>
+            <p>32 11</p>
+            <p>45 15 32 15</p>
+
+            <p>
+              Dans la robe, j’ai caché un code de 4 chiffres ecrit sur une
+              feuille, entre le code dans le champ en bas et appuie sur
+              “Valider” pour passer à l’étape supérieure.
+            </p>
+            <form id="enigmeForm" onsubmit="return validateAnswer()">
+              <div class="input-container">
+                <input
+                  type="text"
+                  placeholder="Entrez votre réponse"
+                  class="input-field"
+                  id="userInput"
+                />
+                <button type="submit" class="bottom-link">VALIDER</button>
+              </div>
+              <div id="errorMessage" class="error-message"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function validateAnswer() {
+        const correctAnswer = "2580"; // Réponse correcte
+        const userInput = document.getElementById("userInput").value.trim();
+        const errorMessage = document.getElementById("errorMessage");
+
+        if (userInput.toLowerCase() === correctAnswer.toLowerCase()) {
+          // Si la réponse est correcte, redirigez vers la page suivante
+          window.location.href = "De_enigme.html";
+        } else {
+          // Si la réponse est incorrecte, affichez un message d'erreur
+          errorMessage.textContent = "Réponse incorrecte. Veuillez réessayer.";
+        }
+
+        return false; // Empêche le formulaire de se soumettre de manière traditionnelle
+      }
+    </script>
+  </body>
+</html>
